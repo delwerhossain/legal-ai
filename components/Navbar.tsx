@@ -49,7 +49,7 @@ export const Navbar = () => {
               Sign in
             </Link>
             <Link href="/chat" className="try-button">
-              Try for free
+              Ask AinBondhu
             </Link>
           </div>
         </div>

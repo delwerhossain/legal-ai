@@ -248,7 +248,7 @@ export default function Home() {
               </p>
 
               <Link href="/chat" className="try-hero-button inline-block">
-                Try for free
+                Ask AinBondhu
               </Link>
 
               {/* <div className="flex items-center gap-8 mt-12">
