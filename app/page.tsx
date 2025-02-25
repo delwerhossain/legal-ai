@@ -212,13 +212,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <div className="product-badge">
+              {/* <div className="product-badge">
                 <span>Product hunt</span>
                 <div className="flex items-center gap-1">
                   <span>Product of the day</span>
                   <span className="font-semibold">1st</span>
                 </div>
-              </div>
+              </div> */}
 
               <h1 className="hero-text mb-6">
                 AinBondhu – Your AI & Lawyer-Powered Legal Assistant
