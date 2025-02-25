@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ----------------------------- New ------------------------------ */
+
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.95) 0%, rgba(17, 17, 17, 1) 100%);
+}
+
+.feature-gradient {
+  background: linear-gradient(135deg, rgba(65, 105, 247, 0.1) 0%, rgba(65, 105, 247, 0.05) 100%);
+}
+
+.hero-text {
+  @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight;
+  line-height: 1.1;
+}
+
+.product-badge {
+  @apply absolute -top-6 right-4 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2;
+}
+
+.nav-container {
+  @apply fixed w-full z-50 transition-all duration-300;
+}
+
+.nav-scrolled {
+  @apply bg-black/90 backdrop-blur-sm shadow-lg;
+}
+
+.nav-link {
+  @apply text-gray-300 hover:text-white transition-colors relative py-2;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.try-button {
+  @apply bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-medium transition-all;
+}
+
+.try-hero-button {
+  @apply bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-lg font-medium transition-all;
+}
+
+.segment-button {
+  @apply px-6 py-2 rounded-full transition-all;
+}
+
+.segment-button.active {
+  @apply bg-white/10;
+}
+
+.mockup-shadow {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.feature-card {
+  @apply p-8 rounded-2xl transition-all duration-300 hover:translate-y-[-8px] hover:shadow-xl;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+}
+
+.pricing-card {
+  @apply p-8 rounded-2xl transition-all duration-300 hover:translate-y-[-8px] hover:shadow-xl bg-white/5 backdrop-blur-sm;
+}
+
+.testimonial-card {
+  @apply p-6 rounded-2xl transition-all duration-300 hover:translate-y-[-8px] hover:shadow-xl bg-white/5 backdrop-blur-sm;
+}
+
+.tab-button {
+  @apply px-6 py-3 rounded-full transition-all text-gray-400 hover:text-white;
+}
+
+.tab-button.active {
+  @apply bg-white/10 text-white;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  min-width: 100%;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* ----------------------------- old ------------------------------ */
+.gradient-bg {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+}
+
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.chat-container {
+  height: calc(100vh - theme('spacing.14'));
+  @apply flex flex-col;
+}
+
+.chat-messages {
+  @apply flex-1 overflow-hidden;
+}
+
+.message-bubble {
+  @apply rounded-lg px-4 py-2 max-w-[80%] break-words;
+}
+
+.user-message {
+  @apply bg-secondary text-secondary-foreground ml-auto;
+}
+
+.assistant-message {
+  @apply bg-muted text-muted-foreground;
+}
+
+/* Bangla Font Support */
+@font-face {
+  font-family: 'Bangla';
+  src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;700&display=swap');
+}
+
+.bangla {
+  font-family: 'Noto Sans Bengali', sans-serif;
+}
