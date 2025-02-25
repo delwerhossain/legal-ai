@@ -33,7 +33,7 @@ import {
   BarChart,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import NVIDIALOGO from "@/public/image/NVIDIA.svg";
+// import NVIDIALOGO from "@/public/image/NVIDIA.svg";
 
 // Company logos with proper URLs
 const companyLogos = [
@@ -251,7 +251,7 @@ export default function Home() {
                 Try for free
               </Link>
 
-              <div className="flex items-center gap-8 mt-12">
+              {/* <div className="flex items-center gap-8 mt-12">
                 <div className="flex items-center">
                   <Image
                     src={NVIDIALOGO}
@@ -276,7 +276,7 @@ export default function Home() {
                     For Startups
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[3/4] overflow-hidden rounded-lg">
