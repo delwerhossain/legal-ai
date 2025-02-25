@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 
 const translations = {
   en: {
-    title: "Legal AI Assistant",
+    title: "AinBondhu Assistant",
     light: "Light",
     dark: "Dark",
     system: "System",
