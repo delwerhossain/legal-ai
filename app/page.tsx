@@ -297,7 +297,7 @@ export default function Home() {
         </div>
 
         {/* Logos Section with Marquee */}
-        <div className="max-w-7xl mx-auto px-6 mt-20 overflow-hidden bg-white py-6 rounded-lg">
+        {/* <div className="max-w-7xl mx-auto px-6 mt-20 overflow-hidden bg-white py-6 rounded-lg">
           <div className="relative">
             <div className="flex animate-marquee items-center space-x-12">
               {[...companyLogos, ...companyLogos].map((logo, index) => (
@@ -313,7 +313,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Features Section */}
