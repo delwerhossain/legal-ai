@@ -89,7 +89,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % screenshots.length);
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(timer);
   }, []);
