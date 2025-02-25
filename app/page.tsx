@@ -392,7 +392,7 @@ export default function Home() {
                   <span className="text-sm text-gray-400 ml-auto">854KB</span>
                 </div>
                 <button className="w-full py-3 rounded-lg bg-black text-white hover:bg-black/80 transition-colors">
-                  Compare with AI and Ask Real Lawywers
+                  Compare with AI and Review from Lawywers
                 </button>
               </div>
             </div>
