@@ -23,5 +23,6 @@ export function useLanguage() {
   return {
     language,
     toggleLanguage,
+    setLanguage
   };
 }
