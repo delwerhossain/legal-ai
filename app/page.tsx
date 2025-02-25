@@ -348,29 +348,29 @@ export default function Home() {
             </div>
 
             {/* Ask AinBondhu Section */}
-            <div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm">
-              <h3 className="text-2xl font-medium mb-4">Ask AinBondhu</h3>
-              <p className="text-gray-400 mb-4">
-                Legal research never been easier. Have a conversation with your
-                virtual assistant, gain insights and simple answers to your
-                complex questions in real-time.
-              </p>
-              <div className="bg-black/30 rounded-xl p-4">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                    <MessageSquare className="w-4 h-4 text-white" />
-                  </div>
-                  <span>Hello, Chris! 👋</span>
-                </div>
-                <p className="text-sm text-gray-400 mb-3">
-                  Please select a question from the "Prompts" library below or
-                  write your own question.
-                </p>
-                <button className="w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-left px-4">
-                  + Add
-                </button>
-              </div>
-            </div>
+            {/* Ask AinBondhu Section */}
+<div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm">
+  <h3 className="text-2xl font-medium mb-4">AinBondhu - Your Legal Companion</h3>
+  <p className="text-gray-400 mb-4">
+    No more legal confusion! Get instant insights on Bangladeshi laws, talk to AinBondhu, 
+    and find simple answers to complex legal questions in just a few clicks.
+  </p>
+  <div className="bg-black/30 rounded-xl p-4">
+    <div className="flex items-center gap-2 mb-3">
+      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+        <MessageSquare className="w-4 h-4 text-white" />
+      </div>
+      <span>Need legal advice in Bangladesh? 🏛️</span>
+    </div>
+    <p className="text-sm text-gray-400 mb-3">
+      Select a question from the "Prompts" library below or type your own legal query.
+    </p>
+    <button className="w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-left px-4">
+      + Ask a New Question
+    </button>
+  </div>
+</div>
+
 
             {/* AI Document Handling */}
             <div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm">
@@ -383,16 +383,16 @@ export default function Home() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 bg-black/30 rounded-lg p-3">
                   <FileText className="w-5 h-5" />
-                  <span>Legal_claim.pdf</span>
+                  <span>Land_Deed_Khatian.pdf</span>
                   <span className="text-sm text-gray-400 ml-auto">1.04MB</span>
                 </div>
                 <div className="flex items-center gap-2 bg-black/30 rounded-lg p-3">
                   <FileText className="w-5 h-5" />
-                  <span>Legal_claim2.pdf</span>
+                  <span>Company_Trade_License.pdf</span>
                   <span className="text-sm text-gray-400 ml-auto">854KB</span>
                 </div>
                 <button className="w-full py-3 rounded-lg bg-black text-white hover:bg-black/80 transition-colors">
-                  Compare with AI and Review from Lawywers
+                  Compare with AI and Review from Lawyers
                 </button>
               </div>
             </div>
@@ -554,6 +554,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
 
       {/* Footer */}
       <footer className="bg-[#0A0A0A] py-16">
