@@ -4,8 +4,8 @@ export default function PricePolicy() {
   return (
     <div className="container mx-auto px-4 py-8">
       <Head>
-        <h2>Price Policy - Legal AI</h2>
-        <meta name="description" content="Legal AI Price Policy" />
+        <h2>Price Policy - AinBondhu</h2>
+        <meta name="description" content="AinBondhu Price Policy" />
       </Head>
 
       <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow">
@@ -17,7 +17,7 @@ export default function PricePolicy() {
 
         <h2 className="text-xl font-semibold mt-6 mb-2">Free Plan</h2>
         <p className="text-gray-600">
-          - Limited access to legal AI chat.<br />
+          - Limited access to AinBondhu chat.<br />
           - Up to 10 queries per month.<br />
           - Basic legal information, not professional advice.
         </p>
@@ -33,7 +33,7 @@ export default function PricePolicy() {
         <p className="text-gray-600">
           - AI-assisted legal document drafting.<br />
           - API integration for businesses.<br />
-          - Dedicated legal AI consultant.
+          - Dedicated AinBondhu consultant.
         </p>
 
         <p className="text-gray-500 text-sm mt-6">

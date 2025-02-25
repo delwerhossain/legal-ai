@@ -33,7 +33,7 @@ import {
   BarChart,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import NVIDIALOGO from "@/public/image/NVIDIA.svg";
+// import NVIDIALOGO from "@/public/image/NVIDIA.svg";
 
 // Company logos with proper URLs
 const companyLogos = [
@@ -212,13 +212,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <div className="product-badge">
+              {/* <div className="product-badge">
                 <span>Product hunt</span>
                 <div className="flex items-center gap-1">
                   <span>Product of the day</span>
                   <span className="font-semibold">1st</span>
                 </div>
-              </div>
+              </div> */}
 
               <h1 className="hero-text mb-6">
                 AinBondhu – Your AI & Lawyer-Powered Legal Assistant
@@ -248,10 +248,10 @@ export default function Home() {
               </p>
 
               <Link href="/chat" className="try-hero-button inline-block">
-                Try for free
+                Ask AinBondhu
               </Link>
 
-              <div className="flex items-center gap-8 mt-12">
+              {/* <div className="flex items-center gap-8 mt-12">
                 <div className="flex items-center">
                   <Image
                     src={NVIDIALOGO}
@@ -276,7 +276,7 @@ export default function Home() {
                     For Startups
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="relative w-full aspect-[16/9] sm:aspect-[4/3] md:aspect-[3/4] overflow-hidden rounded-lg">
@@ -297,7 +297,7 @@ export default function Home() {
         </div>
 
         {/* Logos Section with Marquee */}
-        <div className="max-w-7xl mx-auto px-6 mt-20 overflow-hidden bg-white py-6 rounded-lg">
+        {/* <div className="max-w-7xl mx-auto px-6 mt-20 overflow-hidden bg-white py-6 rounded-lg">
           <div className="relative">
             <div className="flex animate-marquee items-center space-x-12">
               {[...companyLogos, ...companyLogos].map((logo, index) => (
@@ -313,7 +313,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Features Section */}
@@ -323,7 +323,7 @@ export default function Home() {
             <div className="inline-flex items-center justify-center px-4 py-1 rounded-full bg-white/5 text-sm font-medium mb-4">
               Features
             </div>
-            <h2 className="text-5xl font-medium mb-6">Features of legal AI</h2>
+            <h2 className="text-5xl font-medium mb-6">Features of AinBondhu</h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Explore features that boost your productivity. From document
               automation to advanced research, we've got the hard work covered.
@@ -392,7 +392,7 @@ export default function Home() {
                   <span className="text-sm text-gray-400 ml-auto">854KB</span>
                 </div>
                 <button className="w-full py-3 rounded-lg bg-black text-white hover:bg-black/80 transition-colors">
-                  Compare with AI and Ask Real Lawywers
+                  Compare with AI and Review from Lawywers
                 </button>
               </div>
             </div>
@@ -415,81 +415,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
-
-
-{/* Key Features Section */}
-<section className="py-24 bg-[#111111]">
-  <div className="max-w-7xl mx-auto px-6">
-
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {/*  Section */}
-      <div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm">
-        <h3 className="text-2xl font-medium mb-4">Instant Legal Answers</h3>
-        <p className="text-gray-400 mb-4">
-          Get quick, AI-generated explanations on Bangladeshi laws in simple language.
-        </p>
-        <div className="relative h-48 flex items-center justify-center">
-          <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center">
-            <Lightbulb className="w-10 h-10 text-white" />
-          </div>
-          <div className="absolute w-full h-full flex items-center justify-center">
-            <div className="w-48 h-48 border border-white/10 rounded-full animate-spin-slow" />
-          </div>
-        </div>
-      </div>
-
-      {/* Contract & Document Validation Section */}
-      <div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm">
-        <h3 className="text-2xl font-medium mb-4">Contract & Document Validation</h3>
-        <p className="text-gray-400 mb-4">
-          Upload agreements, land documents, business contracts for lawyer review.
-        </p>
-        <div className="relative h-48 flex items-center justify-center">
-          <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center">
-            <FileCheck className="w-10 h-10 text-white" />
-          </div>
-          <div className="absolute w-full h-full flex items-center justify-center">
-            <div className="w-48 h-48 border border-white/10 rounded-full animate-spin-slow" />
-          </div>
-        </div>
-      </div>
-
-      {/* Wide Range of Legal Services Section */}
-      <div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm">
-        <h3 className="text-2xl font-medium mb-4">Wide Range of Legal Services</h3>
-        <p className="text-gray-400 mb-4">
-          Covering property laws, corporate laws, family matters, and more.
-        </p>
-        <div className="relative h-48 flex items-center justify-center">
-          <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center">
-            <ShieldCheck className="w-10 h-10 text-white" />
-          </div>
-          <div className="absolute w-full h-full flex items-center justify-center">
-            <div className="w-48 h-48 border border-white/10 rounded-full animate-spin-slow" />
-          </div>
-        </div>
-      </div>
-
-      {/* Connect with Lawyers Section */}
-      <div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm">
-        <h3 className="text-2xl font-medium mb-4">Connect with Lawyers</h3>
-        <p className="text-gray-400 mb-4">
-          Find and consult verified lawyers directly through the platform.
-        </p>
-        <div className="relative h-48 flex items-center justify-center">
-          <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center">
-            <UserCheck className="w-10 h-10 text-white" />
-          </div>
-          <div className="absolute w-full h-full flex items-center justify-center">
-            <div className="w-48 h-48 border border-white/10 rounded-full animate-spin-slow" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
       {/* Who is AinBondhu for? Section */}
