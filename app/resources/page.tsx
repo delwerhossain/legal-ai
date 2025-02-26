@@ -28,7 +28,7 @@ export default function Resources() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white px-6 py-12">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white px-6 py-12 mt-16">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-6">Legal Resources</h1>
         <p className="text-gray-600 dark:text-gray-400 mb-8">

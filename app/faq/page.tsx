@@ -23,7 +23,7 @@ export default function FAQ() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white px-6 py-12">
+    <div className=" mt-16 min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white px-6 py-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-6">Frequently Asked Questions</h1>
 
