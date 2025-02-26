@@ -224,7 +224,7 @@ export default function ChatPage() {
           message.role === "user"
             ? "ml-auto bg-primary text-primary-foreground"
             : "bg-muted",
-          message.role === "lawyer" && "bg-blue-100 dark:bg-blue-900"
+          message.role === "lawyer" && "bg-slate-900 text-white"
         )}
       >
         <ReactMarkdown

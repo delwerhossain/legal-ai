@@ -20,8 +20,10 @@ import {
   Building2,
   GraduationCap,
   CheckCircle,
-  Lightbulb, FileCheck, ShieldCheck, UserCheck,
-  Globe,
+  Lightbulb,
+  FileCheck,
+  ShieldCheck,
+  UserCheck,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import {
@@ -205,11 +207,9 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen dark:bg-[#111111] bg-white text-black dark:text-white">
-    
-
+    <div className="min-h-screen bg-white  text-[#111111]">
       {/* Hero Section */}
-      <section className="hero-gradient dark:hero-gradient pt-32 pb-20 relative overflow-hidden">
+      <section className="hero-gradient pt-32 pb-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -221,9 +221,8 @@ export default function Home() {
                 </div>
               </div> */}
 
-              <h1 className="hero-text dark:text-white text-black mb-6">
-              <span className="italic text-blue-500">AI</span>
-              <span className="text-blue-500">n</span>Bondhu – Your AI & Lawyer-Powered Legal Assistant
+              <h1 className="hero-text mb-6">
+                AinBondhu – Your AI & Lawyer-Powered Legal Assistant
               </h1>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -245,8 +244,9 @@ export default function Home() {
                 </button>
               </div>
 
-              <p className="dark:text-gray-400 text-gray-900  text-lg mb-8">
-              Instant legal help, contract validation & lawyer consultations—all in one place.
+              <p className="text-gray-400 text-lg mb-8">
+                Instant legal help, contract validation & lawyer
+                consultations—all in one place.
               </p>
 
               <Link href="/chat" className="try-hero-button inline-block">
@@ -319,10 +319,10 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 dark:bg-[#111111] bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center px-4 py-1 rounded-full dar:bg-white/5 bg-gray-200 text-sm font-medium mb-4">
+            <div className="inline-flex items-center justify-center px-4 py-1 rounded-full bg-slate-100 text-sm font-medium mb-4">
               Features
             </div>
             <h2 className="text-5xl font-medium mb-6">Features of AinBondhu</h2>
@@ -334,14 +334,17 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {/* Internet-powered Section */}
-            <div className="dark:bg-white/5 bg-gray-100  rounded-3xl p-8 backdrop-blur-sm">
-              <h3 className="text-2xl font-medium mb-4">Instant Legal Answers</h3>
+            <div className="bg-slate-100 rounded-3xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-medium mb-4">
+                Instant Legal Answers
+              </h3>
               <p className="text-gray-400 mb-8">
-              Get quick, AI-generated explanations on Bangladeshi laws in simple language.
+                Get quick, AI-generated explanations on Bangladeshi laws in
+                simple language.
               </p>
               <div className="relative h-48 flex items-center justify-center">
                 <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center">
-                  <Lightbulb className="w-10 h-10 text-white" />
+                  <Lightbulb className="w-10 h-10 text-black" />
                 </div>
                 <div className="absolute w-full h-full flex items-center justify-center">
                   <div className="w-48 h-48 border border-white/10 rounded-full animate-spin-slow" />
@@ -351,60 +354,65 @@ export default function Home() {
 
             {/* Ask AinBondhu Section */}
             {/* Ask AinBondhu Section */}
-<div className="dark:bg-white/5 bg-gray-100 rounded-3xl p-8 backdrop-blur-sm">
-  <h3 className="text-2xl font-medium mb-4"><span className="italic text-blue-500">AI</span>
-            <span className="text-blue-500">n</span>Bondhu- Your Legal Companion</h3>
-  <p className="dark:text-gray-400 text-gray-900 mb-4">
-    No more legal confusion! Get instant insights on Bangladeshi laws, talk to AinBondhu, 
-    and find simple answers to complex legal questions in just a few clicks.
-  </p>
-  <div className="dark:bg-gray-800 bg-gray-300 rounded-xl p-4">
-    <div className="flex items-center gap-2 mb-3">
-      <div className="w-8 h-8 rounded-full dark:bg-primary bg-gray-100 flex items-center justify-center">
-        <MessageSquare className="w-4 h-4 " />
-      </div>
-      <span>Need legal advice in Bangladesh? 🏛️</span>
-    </div>
-    <p className="text-sm dark:text-gray-400 text-gray-900  mb-3">
-      Select a question from the "Prompts" library below or type your own legal query.
-    </p>
-    <button className="w-full py-2 rounded-lg dark:bg-white/5 bg-gray-100 hover:bg-white/10 transition-colors text-left px-4">
-      + Ask a New Question
-    </button>
-  </div>
-</div>
-
-
-            {/* AI Document Handling */}
-            <div className="dark:bg-white/5 bg-gray-100 rounded-3xl p-8 backdrop-blur-sm">
+            <div className="bg-slate-100 rounded-3xl p-8 backdrop-blur-sm">
               <h3 className="text-2xl font-medium mb-4">
-              Contract & Document Validation
+                AinBondhu - Your Legal Companion
               </h3>
               <p className="text-gray-400 mb-4">
-              Upload agreements, land documents, business contracts for lawyer review.
+                No more legal confusion! Get instant insights on Bangladeshi
+                laws, talk to AinBondhu, and find simple answers to complex
+                legal questions in just a few clicks.
+              </p>
+              <div className="bg-white rounded-xl p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                    <MessageSquare className="w-4 h-4 text-black" />
+                  </div>
+                  <span>Need legal advice in Bangladesh? 🏛️</span>
+                </div>
+                <p className="text-sm text-gray-400 mb-3">
+                  Select a question from the "Prompts" library below or type
+                  your own legal query.
+                </p>
+                <button className="w-full py-2 rounded-lg bg-slate-100 hover:bg-white/10 transition-colors text-left px-4">
+                  + Ask a New Question
+                </button>
+              </div>
+            </div>
+
+            {/* AI Document Handling */}
+            <div className="bg-slate-100 rounded-3xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-medium mb-4">
+                Contract & Document Validation
+              </h3>
+              <p className="text-gray-400 mb-4">
+                Upload agreements, land documents, business contracts for lawyer
+                review.
               </p>
               <div className="space-y-2">
-                <div className="flex items-center gap-2 dark:bg-black/30  bg-white rounded-lg p-3">
+                <div className="flex items-center gap-2 bg-white/30 rounded-lg p-3">
                   <FileText className="w-5 h-5" />
                   <span>Land_Deed_Khatian.pdf</span>
                   <span className="text-sm text-gray-400 ml-auto">1.04MB</span>
                 </div>
-                <div className="flex items-center gap-2 dark:bg-black/30  bg-white rounded-lg p-3">
+                <div className="flex items-center gap-2 bg-white/30 rounded-lg p-3">
                   <FileText className="w-5 h-5" />
                   <span>Company_Trade_License.pdf</span>
                   <span className="text-sm text-gray-400 ml-auto">854KB</span>
                 </div>
-                <button className="w-full py-3 rounded-lg bg-black text-white hover:bg-black/80 transition-colors">
+                <button className="w-full py-3 rounded-lg bg-white text-black hover:bg-white/80 transition-colors">
                   Compare with AI and Review from Lawyers
                 </button>
               </div>
             </div>
 
             {/* Multi-platform */}
-            <div className="dark:bg-white/5 bg-gray-100 rounded-3xl p-8 backdrop-blur-sm">
-              <h3 className="text-2xl font-medium mb-4">Connect with Lawyers</h3>
+            <div className="bg-slate-100 rounded-3xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-medium mb-4">
+                Connect with Lawyers
+              </h3>
               <p className="text-gray-400 mb-4">
-              Find and consult verified lawyers directly through the platform.
+                Find and consult verified lawyers directly through the platform.
               </p>
               <div className="relative h-48">
                 <Image
@@ -419,24 +427,22 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Who is AinBondhu for? Section */}
-      <section className="py-24 dark:bg-[#0A0A0A] bg-white  relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center px-4 py-1 rounded-full dark:bg-white/5 bg-gray-100 text-sm font-medium mb-4">
+            <div className="inline-flex items-center justify-center px-4 py-1 rounded-full bg-slate-100 text-sm font-medium mb-4">
               <Users className="w-4 h-4 mr-2" />
               Users
             </div>
-            <h2 className="text-5xl font-medium mb-6">Who is <span className="italic text-blue-500">AI</span>
-            <span className="text-blue-500">n</span>Bondhufor?</h2>
+            <h2 className="text-5xl font-medium mb-6">Who is AinBondhu for?</h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Explore features that boost your productivity. From document
               automation to advanced research, we've got the hard work covered.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 title: "Individuals",
@@ -477,7 +483,7 @@ export default function Home() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="group border dark:border-slate-900 dark:bg-white/5 bg-gray-100 dark:hover:bg-white/10 dark:backdrop-blur-sm hover:bg-white/10 backdrop-blur-sm rounded-3xl p-6 transition-all duration-300 hover:translate-y-[-8px]"
+                className="group bg-slate-100 hover:bg-white/10 backdrop-blur-sm rounded-3xl p-6 transition-all duration-300 hover:translate-y-[-8px]"
               >
                 <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
                   {item.icon}
@@ -491,10 +497,10 @@ export default function Home() {
       </section>
 
       {/* Advantages Section */}
-      <section className="py-24 dark:bg-gradient-to-b dark:from-[#0A0A0A] dark:to-[#111111] bg-gradient-to-b from-[#ffffff] to-gray-100">
+      <section className="py-24 bg-gradient-to-b from-white to-gray-100 ">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center px-4 py-1 rounded-full dark:bg-white/5 bg-gray-200 text-sm font-medium mb-4">
+            <div className="inline-flex items-center justify-center px-4 py-1 rounded-full bg-slate-100 text-sm font-medium mb-4">
               Advantages
             </div>
             <h2 className="text-5xl font-medium mb-6">
@@ -508,52 +514,41 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-  {
-    title: "AI-Powered Legal Help",
-    icon: <Sparkles className="w-6 h-6 text-primary" />,
-    description: "Get instant legal guidance without complexity.",
-    stats: "24/7 Assistance",
-  },
+              {
+                title: "Easy-to-Use AI Assistance",
+                icon: <Sparkles className="w-6 h-6 text-primary" />, // Changed icon to emphasize AI-powered simplicity
+                description:
+                  "Get legal insights in simple terms, no confusing jargon.",
+                stats: "Instant Answers", // Highlighting speed & ease of use
+              },
 
-  {
-    title: "Fast & Secure",
-    icon: <Shield className="w-6 h-6" />,
-    description: "Your legal queries remain private and encrypted.",
-    stats: "100% Confidential",
-  },
+              {
+                title: "Fast & Secure",
+                icon: <Shield className="w-6 h-6" />,
+                description:
+                  "AI and lawyer services ensure quick and private legal support.",
+                stats: "100% Encrypted",
+              },
 
-  {
-    title: "Verified by Experts",
-    icon: <CheckCircle className="w-6 h-6 text-green-500" />,
-    description: "AI insights backed by real legal professionals.",
-    stats: "Lawyer Approved",
-  },
+              {
+                title: "Lawyer-Powered Validation",
+                icon: <CheckCircle className="w-6 h-6 text-green-500" />,
+                description:
+                  "Ensure your documents and contracts are legally sound.",
+                stats: "Legally Verified",
+              },
 
-  {
-    title: "Cost-Effective Legal Aid",
-    icon: <BarChart className="w-6 h-6" />,
-    description: "Reduce legal expenses while getting expert advice.",
-    stats: "-90% Costs",
-  },
-
-  {
-    title: "Comprehensive Legal Coverage",
-    icon: <FileText className="w-6 h-6" />,
-    description: "Covers contracts, disputes, compliance, and more.",
-    stats: "All-in-One Solution",
-  },
-
-  {
-    title: "Multilingual Support",
-    icon: <Globe className="w-6 h-6" />,
-    description: "Legal assistance available in multiple languages.",
-    stats: "Global Access",
-  },
-]
-.map((item, index) => (
+              {
+                title: "Affordable & Accessible",
+                icon: <BarChart className="w-6 h-6" />,
+                description:
+                  "Skip expensive legal fees and long waiting times.",
+                stats: "-90% Cost",
+              },
+            ].map((item, index) => (
               <div
                 key={index}
-                className="group border dark:border-slate-600 relative overflow-hidden rounded-3xl p-8 transition-all duration-300 hover:translate-y-[-8px]"
+                className=" border group relative overflow-hidden rounded-3xl p-8 transition-all duration-300 hover:translate-y-[-8px]"
               >
                 {/* Gradient background that animates on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -572,99 +567,107 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Contact Us Section */}
-<div className="dark:bg-white/5 my-16 bg-gray-100 rounded-3xl p-8 backdrop-blur-sm max-w-2xl mx-auto">
-  <h3 className="text-2xl font-medium mb-4 text-center">Partner with AinBondhu</h3>
-  <p className="text-gray-400 mb-6 text-center">
-    Looking for AI-powered legal solutions for your business or firm?  
-    Let’s connect and explore how <span className="italic text-blue-500">AI</span>
-            <span className="text-blue-500">n</span>Bondhucan assist your legal needs.
-  </p>
+      <div className="bg-slate-100 mt-10 rounded-3xl p-8 backdrop-blur-sm max-w-lg mx-auto">
+        <h3 className="text-2xl font-medium mb-4 text-center">
+          Partner with AinBondhu
+        </h3>
+        <p className="text-gray-400 mb-6 text-center">
+          Looking for AI-powered legal solutions for your business or firm?
+          Let’s connect and explore how AinBondhu can assist your legal needs.
+        </p>
 
-  {/* Contact Form */}
-  <form className="space-y-4">
-    {/* Name Field */}
-    <div>
-      <label className="block text-sm dark:text-gray-300 text-gray-900 mb-1">Your Name</label>
-      <input 
-        type="text" 
-        placeholder="Enter your name" 
-        className="w-full px-4 py-3 dark:bg-black/20 rounded-lg border dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary text-white"
-        required
-      />
-    </div>
+        {/* Contact Form */}
+        <form className="space-y-4">
+          {/* Name Field */}
+          <div>
+            <label className="block text-sm text-gray-300 mb-1">
+              Your Name
+            </label>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              className="w-full px-4 py-3 bg-white rounded-lg border  focus:outline-none focus:ring-2 focus:ring-primary text-black"
+              required
+            />
+          </div>
 
-    {/* Email Field */}
-    <div>
-      <label className="block text-sm dark:text-gray-300 text-gray-900 mb-1">Your Email</label>
-      <input 
-        type="email" 
-        placeholder="Enter your email" 
-        className="w-full px-4 py-3  dark:bg-black/20 rounded-lg border dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary text-white"
-        required
-      />
-    </div>
+          {/* Email Field */}
+          <div>
+            <label className="block text-sm text-gray-300 mb-1">
+              Your Email
+            </label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full px-4 py-3 bg-white rounded-lg border bfocus:outline-none focus:ring-2 focus:ring-primary text-black"
+              required
+            />
+          </div>
 
-    {/* Message Field */}
-    <div>
-      <label className="block text-sm dark:text-gray-300 text-gray-900 mb-1">Your Message</label>
-      <textarea 
-        placeholder="Tell us how we can help..." 
-        rows={4} 
-        className="w-full px-4 py-3  dark:bg-black/20 rounded-lg border  dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary text-white"
-        required
-      ></textarea>
-    </div>
+          {/* Message Field */}
+          <div>
+            <label className="block text-sm text-gray-300 mb-1">
+              Your Message
+            </label>
+            <textarea
+              placeholder="Tell us how we can help..."
+              rows={4}
+              className="w-full px-4 py-3 bg-white rounded-lg border bfocus:outline-none focus:ring-2 focus:ring-primary text-black"
+              required
+            ></textarea>
+          </div>
 
-    {/* Submit Button */}
-    <button 
-      type="submit" 
-      className="w-full py-3 rounded-lg bg-primary text-white hover:bg-primary/80 transition-colors text-center text-lg font-medium">
-      Send Message
-    </button>
-  </form>
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full py-3 rounded-lg bg-primary text-white hover:bg-primary/80 transition-colors text-center text-lg font-medium"
+          >
+            Send Message
+          </button>
+        </form>
 
-  {/* Additional Info */}
-  <p className="text-sm text-gray-400 mt-4 text-center">
-    For bulk queries, legal partnerships, or API integration, email us at{" "}
-    <span className="text-primary font-medium">enterprise@ainbondhu.com</span>
-  </p>
-</div>
-
-
+        {/* Additional Info */}
+        <p className="text-sm text-gray-400 mt-4 text-center">
+          For bulk queries, legal partnerships, or API integration, email us at{" "}
+          <span className="text-primary font-medium">
+            enterprise@ainbondhu.com
+          </span>
+        </p>
+      </div>
 
       {/* Footer */}
-      <footer className="bg-[#0A0A0A] py-16">
+      <footer className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12">
             <div>
-              <h3 className="text-xl text-white font-semibold mb-6">AinBondhu</h3>
+              <h3 className="text-xl font-semibold mb-6">AinBondhu</h3>
               <p className="text-gray-400 mb-6">
-                Revolutionizing legal assistance in Bangladesh—making it simpler, faster, and more accessible for everyone.
+                Revolutionizing legal assistance in Bangladesh—making it
+                simpler, faster, and more accessible for everyone.
               </p>
               <div className="flex gap-4">
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-black transition-colors"
                 >
                   <Facebook className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-black transition-colors"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-black transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-black transition-colors"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
@@ -672,12 +675,12 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-white ">Product</h4>
+              <h4 className="font-semibold mb-4">Product</h4>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     Features
                   </a>
@@ -685,7 +688,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     Pricing
                   </a>
@@ -693,7 +696,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     Security
                   </a>
@@ -701,7 +704,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     Roadmap
                   </a>
@@ -710,12 +713,12 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-white ">Company</h4>
+              <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     About
                   </a>
@@ -723,7 +726,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     Blog
                   </a>
@@ -731,7 +734,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     Careers
                   </a>
@@ -739,7 +742,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     Contact
                   </a>
@@ -748,12 +751,12 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-white ">Legal</h4>
+              <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     Terms
                   </a>
@@ -761,7 +764,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     Privacy
                   </a>
@@ -769,7 +772,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     Cookies
                   </a>
@@ -777,7 +780,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-black transition-colors"
                   >
                     Licenses
                   </a>
