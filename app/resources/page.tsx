@@ -1,44 +1,56 @@
-import Head from "next/head";
+export default function Resources() {
+  const resources = [
+    {
+      title: "Bangladesh Constitution",
+      description: "Read the full Constitution of Bangladesh for legal references.",
+      link: "https://www.parliament.gov.bd/index.php/en/constitution-of-bangladesh",
+    },
+    {
+      title: "Bangladesh Penal Code",
+      description: "Detailed information on criminal laws applicable in Bangladesh.",
+      link: "https://bdlaws.minlaw.gov.bd/act-11.html",
+    },
+    {
+      title: "Legal Aid Services",
+      description: "Free legal aid services provided by the Bangladesh government.",
+      link: "http://nlaso.gov.bd/",
+    },
+    {
+      title: "High Court & Supreme Court Cases",
+      description: "Access important judgments and legal precedents in Bangladesh.",
+      link: "http://www.supremecourt.gov.bd/",
+    },
+    {
+      title: "AinBondhu Legal Guides",
+      description: "Step-by-step guides on common legal issues in Bangladesh.",
+      link: "#",
+    }
+  ];
 
-export default function PricePolicy() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <Head>
-        <h2>Price Policy - AinBondhu</h2>
-        <meta name="description" content="AinBondhu Price Policy" />
-      </Head>
-
-      <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow">
-        <h1 className="text-2xl font-bold mb-4">Price Policy</h1>
-        <p className="text-gray-600 mb-4">
-          Our pricing model is designed to be transparent and accessible. Below
-          are the details of our price structure.
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white px-6 py-12">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl font-bold mb-6">Legal Resources</h1>
+        <p className="text-gray-600 dark:text-gray-400 mb-8">
+          Find useful legal references, official documents, and free legal aid services related to Bangladeshi law.
         </p>
 
-        <h2 className="text-xl font-semibold mt-6 mb-2">Free Plan</h2>
-        <p className="text-gray-600">
-          - Limited access to AinBondhu chat.<br />
-          - Up to 10 queries per month.<br />
-          - Basic legal information, not professional advice.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6 mb-2">Pro Plan - $19.99/month</h2>
-        <p className="text-gray-600">
-          - Unlimited AI chat access.<br />
-          - Advanced legal insights.<br />
-          - Priority support.
-        </p>
-
-        <h2 className="text-xl font-semibold mt-6 mb-2">Enterprise Plan - Custom Pricing</h2>
-        <p className="text-gray-600">
-          - AI-assisted legal document drafting.<br />
-          - API integration for businesses.<br />
-          - Dedicated AinBondhu consultant.
-        </p>
-
-        <p className="text-gray-500 text-sm mt-6">
-          Note: Prices are subject to change. Please check regularly for updates.
-        </p>
+        <div className="space-y-6">
+          {resources.map((resource, index) => (
+            <div key={index} className="border border-gray-300 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-800 shadow-md">
+              <h2 className="text-lg font-semibold">{resource.title}</h2>
+              <p className="text-gray-700 dark:text-gray-400 mt-2">{resource.description}</p>
+              <a
+                href={resource.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary mt-3 inline-block hover:underline"
+              >
+                Access Resource →
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
