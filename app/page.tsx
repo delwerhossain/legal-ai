@@ -348,29 +348,29 @@ export default function Home() {
             </div>
 
             {/* Ask AinBondhu Section */}
-            <div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm">
-              <h3 className="text-2xl font-medium mb-4">Ask AinBondhu</h3>
-              <p className="text-gray-400 mb-4">
-                Legal research never been easier. Have a conversation with your
-                virtual assistant, gain insights and simple answers to your
-                complex questions in real-time.
-              </p>
-              <div className="bg-black/30 rounded-xl p-4">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                    <MessageSquare className="w-4 h-4 text-white" />
-                  </div>
-                  <span>Hello, Chris! 👋</span>
-                </div>
-                <p className="text-sm text-gray-400 mb-3">
-                  Please select a question from the "Prompts" library below or
-                  write your own question.
-                </p>
-                <button className="w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-left px-4">
-                  + Add
-                </button>
-              </div>
-            </div>
+            {/* Ask AinBondhu Section */}
+<div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm">
+  <h3 className="text-2xl font-medium mb-4">AinBondhu - Your Legal Companion</h3>
+  <p className="text-gray-400 mb-4">
+    No more legal confusion! Get instant insights on Bangladeshi laws, talk to AinBondhu, 
+    and find simple answers to complex legal questions in just a few clicks.
+  </p>
+  <div className="bg-black/30 rounded-xl p-4">
+    <div className="flex items-center gap-2 mb-3">
+      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+        <MessageSquare className="w-4 h-4 text-white" />
+      </div>
+      <span>Need legal advice in Bangladesh? 🏛️</span>
+    </div>
+    <p className="text-sm text-gray-400 mb-3">
+      Select a question from the "Prompts" library below or type your own legal query.
+    </p>
+    <button className="w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-left px-4">
+      + Ask a New Question
+    </button>
+  </div>
+</div>
+
 
             {/* AI Document Handling */}
             <div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm">
@@ -383,16 +383,16 @@ export default function Home() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 bg-black/30 rounded-lg p-3">
                   <FileText className="w-5 h-5" />
-                  <span>Legal_claim.pdf</span>
+                  <span>Land_Deed_Khatian.pdf</span>
                   <span className="text-sm text-gray-400 ml-auto">1.04MB</span>
                 </div>
                 <div className="flex items-center gap-2 bg-black/30 rounded-lg p-3">
                   <FileText className="w-5 h-5" />
-                  <span>Legal_claim2.pdf</span>
+                  <span>Company_Trade_License.pdf</span>
                   <span className="text-sm text-gray-400 ml-auto">854KB</span>
                 </div>
                 <button className="w-full py-3 rounded-lg bg-black text-white hover:bg-black/80 transition-colors">
-                  Compare with AI and Review from Lawywers
+                  Compare with AI and Review from Lawyers
                 </button>
               </div>
             </div>
@@ -554,6 +554,67 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
+      {/* Contact Us Section */}
+<div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm max-w-lg mx-auto">
+  <h3 className="text-2xl font-medium mb-4 text-center">Partner with AinBondhu</h3>
+  <p className="text-gray-400 mb-6 text-center">
+    Looking for AI-powered legal solutions for your business or firm?  
+    Let’s connect and explore how AinBondhu can assist your legal needs.
+  </p>
+
+  {/* Contact Form */}
+  <form className="space-y-4">
+    {/* Name Field */}
+    <div>
+      <label className="block text-sm text-gray-300 mb-1">Your Name</label>
+      <input 
+        type="text" 
+        placeholder="Enter your name" 
+        className="w-full px-4 py-3 bg-black/20 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary text-white"
+        required
+      />
+    </div>
+
+    {/* Email Field */}
+    <div>
+      <label className="block text-sm text-gray-300 mb-1">Your Email</label>
+      <input 
+        type="email" 
+        placeholder="Enter your email" 
+        className="w-full px-4 py-3 bg-black/20 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary text-white"
+        required
+      />
+    </div>
+
+    {/* Message Field */}
+    <div>
+      <label className="block text-sm text-gray-300 mb-1">Your Message</label>
+      <textarea 
+        placeholder="Tell us how we can help..." 
+        rows={4} 
+        className="w-full px-4 py-3 bg-black/20 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary text-white"
+        required
+      ></textarea>
+    </div>
+
+    {/* Submit Button */}
+    <button 
+      type="submit" 
+      className="w-full py-3 rounded-lg bg-primary text-white hover:bg-primary/80 transition-colors text-center text-lg font-medium">
+      Send Message
+    </button>
+  </form>
+
+  {/* Additional Info */}
+  <p className="text-sm text-gray-400 mt-4 text-center">
+    For bulk queries, legal partnerships, or API integration, email us at{" "}
+    <span className="text-primary font-medium">enterprise@ainbondhu.com</span>
+  </p>
+</div>
+
+
 
       {/* Footer */}
       <footer className="bg-[#0A0A0A] py-16">
