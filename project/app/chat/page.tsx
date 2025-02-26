@@ -24,15 +24,14 @@ const translations = {
     clearChat: "Clear Chat",
     welcome: "Welcome to Legal Chat Assistant",
     startNewChat: "Start a new chat or select an existing conversation",
-    legalDisclaimer:
-      "This AI provides general legal information, not legal advice. Consult a qualified attorney for legal matters.",
+    legalDisclaimer: "This AI provides general legal information, not legal advice. Consult a qualified attorney for legal matters.",
     privacyPolicy: "Privacy Policy",
     errors: {
       timeout: "⚠️ Request timed out. Please try again.",
       network: "⚠️ Network error. Please check your connection.",
       server: "⚠️ Server error. Please try again later.",
-      unknown: "⚠️ An unexpected error occurred. Please try again.",
-    },
+      unknown: "⚠️ An unexpected error occurred. Please try again."
+    }
   },
   bn: {
     placeholder: "একটি বার্তা টাইপ করুন... ('/' চাপুন ফোকাস করতে)",
@@ -43,22 +42,19 @@ const translations = {
     clearChat: "চ্যাট মুছুন",
     welcome: "লিগ্যাল চ্যাট অ্যাসিস্ট্যান্টে স্বাগতম",
     startNewChat: "নতুন চ্যাট শুরু করুন অথবা বিদ্যমান কথোপকথন নির্বাচন করুন",
-    legalDisclaimer:
-      "এই AI সাধারণ আইনি তথ্য প্রদান করে, আইনি পরামর্শ নয়। আইনি বিষয়ের জন্য যোগ্য আইনজীবীর পরামর্শ নিন।",
+    legalDisclaimer: "এই AI সাধারণ আইনি তথ্য প্রদান করে, আইনি পরামর্শ নয়। আইনি বিষয়ের জন্য যোগ্য আইনজীবীর পরামর্শ নিন।",
     privacyPolicy: "গোপনীয়তা নীতি",
     errors: {
       timeout: "⚠️ অনুরোধ সময় শেষ হয়ে গেছে। অনুগ্রহ করে আবার চেষ্টা করুন।",
       network: "⚠️ নেটওয়ার্ক ত্রুটি। আপনার সংযোগ পরীক্ষা করুন।",
       server: "⚠️ সার্ভার ত্রুটি। অনুগ্রহ করে পরে আবার চেষ্টা করুন।",
-      unknown:
-        "⚠️ একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। অনুগ্রহ করে আবার চেষ্টা করুন।",
-    },
-  },
+      unknown: "⚠️ একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
+    }
+  }
 };
 
 export default function ChatPage() {
-  const { getCurrentSession, addMessage, clearMessages, updateLastMessage } =
-    useChatStore();
+  const { getCurrentSession, addMessage, clearMessages, updateLastMessage } = useChatStore();
   const currentSession = getCurrentSession();
   const [input, setInput] = useState("");
   const [isRecording, setIsRecording] = useState(false);
@@ -104,7 +100,7 @@ export default function ChatPage() {
     const loadingMessage: Message = {
       id: aiMessageId,
       content: "",
-      role: currentSession.type === "lawyer" ? "lawyer" : "assistant",
+      role: currentSession.type === 'lawyer' ? 'lawyer' : 'assistant',
       timestamp: new Date(),
     };
 
@@ -114,10 +110,9 @@ export default function ChatPage() {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
 
-      const endpoint =
-        currentSession.type === "lawyer"
-          ? "/api/v1/chat/ai"
-          : "/api/v1/chat/ai";
+      const endpoint = currentSession.type === 'lawyer' 
+        ? '/api/v1/chat/lawyer'
+        : '/api/v1/chat/ai';
 
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}${endpoint}`.replace(/\/+$/, ""),
@@ -125,9 +120,9 @@ export default function ChatPage() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Accept: "text/event-stream",
+            "Accept": "text/event-stream",
           },
-          body: JSON.stringify({
+          body: JSON.stringify({ 
             question: input,
             sessionId: currentSession.id,
           }),
@@ -168,11 +163,11 @@ export default function ChatPage() {
       let errorMessage = t.errors.unknown;
 
       if (error instanceof Error) {
-        if (error.name === "AbortError") {
+        if (error.name === 'AbortError') {
           errorMessage = t.errors.timeout;
-        } else if (error.message.includes("Failed to fetch")) {
+        } else if (error.message.includes('Failed to fetch')) {
           errorMessage = t.errors.network;
-        } else if (error.message.includes("HTTP error")) {
+        } else if (error.message.includes('HTTP error')) {
           errorMessage = t.errors.server;
         }
       }
@@ -198,7 +193,7 @@ export default function ChatPage() {
     <div className="h-full flex flex-col">
       <div className="border-b p-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          {currentSession.type === "lawyer" ? (
+          {currentSession.type === 'lawyer' ? (
             <Scale className="h-5 w-5" />
           ) : null}
           <h2 className="font-semibold">{currentSession.title}</h2>
@@ -229,15 +224,15 @@ export default function ChatPage() {
             >
               <ReactMarkdown
                 components={{
-                  code: ({ node, className, children, ...props }) => {
-                    const match = /language-(\w+)/.exec(className || "");
-                    return match ? (
+                  code: ({ node, inline, className, children, ...props }) => {
+                    const match = /language-(\w+)/.exec(className || '');
+                    return !inline && match ? (
                       <CodeBlock
                         language={match[1]}
-                        code={String(children).trim()}
+                        code={String(children).replace(/\n$/, '')}
                       />
                     ) : (
-                      <code className={className || ""} {...props}>
+                      <code className={className} {...props}>
                         {children}
                       </code>
                     );
@@ -246,7 +241,6 @@ export default function ChatPage() {
               >
                 {message.content}
               </ReactMarkdown>
-              ;
               <span className="mt-2 text-xs opacity-70">
                 {new Date(message.timestamp).toLocaleTimeString()}
               </span>
