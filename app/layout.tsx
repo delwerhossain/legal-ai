@@ -7,7 +7,7 @@ import { Navbar } from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AinBondhu - Your Personal AinBondhu Assistant",
+  title: "AinBondhu - Your Legal Companion",
   description: "Get instant legal assistance with AinBondhu",
   icons: {
     icon: "/fav/favicon.ico",
