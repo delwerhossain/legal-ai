@@ -88,12 +88,12 @@ export const Navbar = () => {
 
         {/* Authentication, Theme Toggle & Call-to-Action Button */}
         <div className="flex items-center gap-4">
-          <Link
+          {/* <Link
             href="/signin"
             className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
           >
             Sign in
-          </Link>
+          </Link> */}
           
           {/* Theme Toggle Button */}
           <Button
