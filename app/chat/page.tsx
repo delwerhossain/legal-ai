@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Mic, Send, X, Trash2, Scale, Sun, Moon } from "lucide-react";
+import { Mic, Send, X, Trash2, Scale, Sun, Moon, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/hooks/use-language";
 import { useChatStore } from "@/lib/chat-store";
@@ -58,7 +58,8 @@ const translations = {
 };
 
 export default function ChatPage() {
-  const { getCurrentSession, addMessage, clearMessages, updateLastMessage } =
+
+  const { getCurrentSession, addMessage, createSession,clearMessages, updateLastMessage } =
     useChatStore();
   const currentSession = getCurrentSession();
   const [input, setInput] = useState("");
@@ -203,11 +204,31 @@ export default function ChatPage() {
 
   if (!currentSession) {
     return (
-      <div className="h-full flex items-center justify-center">
-        <div className="text-center space-y-4">
+      <div className="h-full grid items-center justify-center">
+       <div>
+       <div className="text-center space-y-4">
           <h2 className="text-2xl font-bold">{t.welcome}</h2>
           <p className="text-muted-foreground">{t.startNewChat}</p>
         </div>
+        <div className="p-4 space-y-2">
+        <Button
+          variant="outline"
+          className="w-full justify-start"
+          onClick={() => createSession('general')}
+        >
+          <Plus className="mr-2 h-4 w-4" />
+          New Chat
+        </Button>
+        <Button
+          variant="outline"
+          className="w-full justify-start"
+          onClick={() => createSession('lawyer')}
+        >
+          <Scale className="mr-2 h-4 w-4" />
+          New Lawyer Chat
+        </Button>
+      </div>
+       </div>
       </div>
     );
   }
