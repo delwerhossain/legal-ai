@@ -1,44 +1,53 @@
-import Head from "next/head";
-
-export default function PricePolicy() {
+export default function PrivacyPolicy() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <Head>
-        <h2>Price Policy - AinBondhu</h2>
-        <meta name="description" content="AinBondhu Price Policy" />
-      </Head>
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white px-6 py-12">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
+        <p className="text-gray-600 dark:text-gray-300 mb-4">Last Updated: 26 February, 2025</p>
 
-      <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow">
-        <h1 className="text-2xl font-bold mb-4">Price Policy</h1>
-        <p className="text-gray-600 mb-4">
-          Our pricing model is designed to be transparent and accessible. Below
-          are the details of our price structure.
-        </p>
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-2">Data Protection & Security</h2>
+          <p className="text-gray-700 dark:text-gray-400">
+            AinBondhu follows all relevant **legal and data protection compliances** applicable in Bangladesh and globally.
+            All user data is **encrypted** using industry-standard security measures to prevent unauthorized access.
+            Your legal queries and interactions remain **private and confidential**.
+          </p>
+        </section>
 
-        <h2 className="text-xl font-semibold mt-6 mb-2">Free Plan</h2>
-        <p className="text-gray-600">
-          - Limited access to AinBondhu chat.<br />
-          - Up to 10 queries per month.<br />
-          - Basic legal information, not professional advice.
-        </p>
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-2">How We Use Your Data</h2>
+          <ul className="list-disc pl-6 text-gray-700 dark:text-gray-400">
+            <li>To improve our AI-driven legal assistance services.</li>
+            <li>To personalize your experience and provide accurate legal insights.</li>
+            <li>To comply with legal obligations and ensure ethical AI usage.</li>
+          </ul>
+        </section>
 
-        <h2 className="text-xl font-semibold mt-6 mb-2">Pro Plan - $19.99/month</h2>
-        <p className="text-gray-600">
-          - Unlimited AI chat access.<br />
-          - Advanced legal insights.<br />
-          - Priority support.
-        </p>
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-2">Your Rights</h2>
+          <p className="text-gray-700 dark:text-gray-400">
+            You have the right to access, modify, or delete your personal data upon request.
+            You can choose not to share certain information, but this may limit some functionalities of AinBondhu.
+          </p>
+        </section>
 
-        <h2 className="text-xl font-semibold mt-6 mb-2">Enterprise Plan - Custom Pricing</h2>
-        <p className="text-gray-600">
-          - AI-assisted legal document drafting.<br />
-          - API integration for businesses.<br />
-          - Dedicated AinBondhu consultant.
-        </p>
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-2">Third-Party Services</h2>
+          <p className="text-gray-700 dark:text-gray-400">
+            We may use secure third-party tools for enhanced functionality, ensuring they adhere to strict privacy standards.
+          </p>
+        </section>
 
-        <p className="text-gray-500 text-sm mt-6">
-          Note: Prices are subject to change. Please check regularly for updates.
-        </p>
+        <section>
+          <h2 className="text-xl font-semibold mb-2">Updates to This Policy</h2>
+          <p className="text-gray-700 dark:text-gray-400">
+            We may update our Privacy Policy periodically. Any changes will be **notified on our website**.
+          </p>
+          <p className="mt-4">
+            For any privacy-related concerns, contact us at 
+            <a href="mailto:legal@ainbondhu.com" className="text-blue-500 dark:text-blue-400 hover:underline"> legal@ainbondhu.com</a>.
+          </p>
+        </section>
       </div>
     </div>
   );
