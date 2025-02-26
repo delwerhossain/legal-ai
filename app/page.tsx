@@ -78,6 +78,7 @@ export default function Home() {
   const { theme, setTheme } = useTheme();
 
   const videoUrl = "https://www.youtube.com/embed/hzswfRoiHiI?si=2OE_FDMOm1qV5kMA"; // Replace with your YouTube video link
+  // added
 
   useEffect(() => {
     const handleScroll = () => {
