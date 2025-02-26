@@ -322,7 +322,7 @@ export default function Home() {
       <section className="py-24 dark:bg-[#111111] bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center px-4 py-1 rounded-full dar:bg-white/5 bg-gray-200 text-sm font-medium mb-4">
+            <div className="inline-flex items-center justify-center px-4 py-1 rounded-full dark:bg-gray-700 bg-gray-200 text-sm font-medium mb-4">
               Features
             </div>
             <h2 className="text-5xl font-medium mb-6">Features of AinBondhu</h2>
@@ -394,9 +394,9 @@ export default function Home() {
                   <span>Company_Trade_License.pdf</span>
                   <span className="text-sm text-gray-400 ml-auto">854KB</span>
                 </div>
-                <button className="w-full py-3 rounded-lg bg-black text-white hover:bg-black/80 transition-colors">
+                <Link href={"/chat"} className="w-full py-3 rounded-lg bg-black text-white hover:bg-black/80 transition-colors">
                   Compare with AI and Review from Lawyers
-                </button>
+                </Link>
               </div>
             </div>
 
