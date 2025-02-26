@@ -77,6 +77,8 @@ export default function Home() {
   const [currentImage, setCurrentImage] = useState(0);
   const { theme, setTheme } = useTheme();
 
+  const videoUrl = "https://www.youtube.com/embed/hzswfRoiHiI?si=2OE_FDMOm1qV5kMA"; // Replace with your YouTube video link
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -317,6 +319,138 @@ export default function Home() {
           </div>
         </div> */}
       </section>
+
+
+{/* video */}
+<section className="py-12 bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white transition-colors">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-3xl font-bold">🎥 Watch AinBondhu in Action</h2>
+        </div>
+
+        {/* Video Embed */}
+        <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            className="w-full h-full"
+            src={videoUrl}
+            title="AinBondhu Introduction"
+            allowFullScreen
+          />
+        </div>
+
+        {/* Description */}
+        <p className="text-center text-gray-500 dark:text-gray-400 mt-4 max-w-3xl mx-auto">
+          Learn how AinBondhu uses AI to provide legal assistance for everyone in Bangladesh.
+        </p>
+      </div>
+    </section>
+
+
+      <section className="py-24 dark:bg-[#111111] bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center px-4 py-1 rounded-full dar:bg-white/5 bg-gray-200 text-sm font-medium mb-4">
+              Features
+            </div>
+            <h2 className="text-5xl font-medium mb-6">Features of AinBondhu</h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Explore features that boost your productivity. From document
+              automation to advanced research, we've got the hard work covered.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {/* Internet-powered Section */}
+            <div className="dark:bg-white/5 bg-gray-100  rounded-3xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-medium mb-4">Instant Legal Answers</h3>
+              <p className="text-gray-400 mb-8">
+              Get quick, AI-generated explanations on Bangladeshi laws in simple language.
+              </p>
+              <div className="relative h-48 flex items-center justify-center">
+                <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center">
+                  <Lightbulb className="w-10 h-10 text-white" />
+                </div>
+                <div className="absolute w-full h-full flex items-center justify-center">
+                  <div className="w-48 h-48 border border-white/10 rounded-full animate-spin-slow" />
+                </div>
+              </div>
+            </div>
+
+            {/* Ask AinBondhu Section */}
+            {/* Ask AinBondhu Section */}
+<div className="dark:bg-white/5 bg-gray-100 rounded-3xl p-8 backdrop-blur-sm">
+  <h3 className="text-2xl font-medium mb-4"><span className="italic text-blue-500">AI</span>
+            <span className="text-blue-500">n</span>Bondhu- Your Legal Companion</h3>
+  <p className="dark:text-gray-400 text-gray-900 mb-4">
+    No more legal confusion! Get instant insights on Bangladeshi laws, talk to AinBondhu, 
+    and find simple answers to complex legal questions in just a few clicks.
+  </p>
+  <div className="dark:bg-gray-800 bg-gray-300 rounded-xl p-4">
+    <div className="flex items-center gap-2 mb-3">
+      <div className="w-8 h-8 rounded-full dark:bg-primary bg-gray-100 flex items-center justify-center">
+        <MessageSquare className="w-4 h-4 " />
+      </div>
+      <span>Need legal advice in Bangladesh? 🏛️</span>
+    </div>
+    <p className="text-sm dark:text-gray-400 text-gray-900  mb-3">
+      Select a question from the "Prompts" library below or type your own legal query.
+    </p>
+    <button className="w-full py-2 rounded-lg dark:bg-white/5 bg-gray-100 hover:bg-white/10 transition-colors text-left px-4">
+      + Ask a New Question
+    </button>
+  </div>
+</div>
+
+
+            {/* AI Document Handling */}
+            <div className="dark:bg-white/5 bg-gray-100 rounded-3xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-medium mb-4">
+              Contract & Document Validation
+              </h3>
+              <p className="text-gray-400 mb-4">
+              Upload agreements, land documents, business contracts for lawyer review.
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 dark:bg-black/30  bg-white rounded-lg p-3">
+                  <FileText className="w-5 h-5" />
+                  <span>Land_Deed_Khatian.pdf</span>
+                  <span className="text-sm text-gray-400 ml-auto">1.04MB</span>
+                </div>
+                <div className="flex items-center gap-2 dark:bg-black/30  bg-white rounded-lg p-3">
+                  <FileText className="w-5 h-5" />
+                  <span>Company_Trade_License.pdf</span>
+                  <span className="text-sm text-gray-400 ml-auto">854KB</span>
+                </div>
+                <button className="w-full py-3 rounded-lg bg-black text-white hover:bg-black/80 transition-colors">
+                  Compare with AI and Review from Lawyers
+                </button>
+              </div>
+            </div>
+
+            {/* Multi-platform */}
+            <div className="dark:bg-white/5 bg-gray-100 rounded-3xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-medium mb-4">Connect with Lawyers</h3>
+              <p className="text-gray-400 mb-4">
+              Find and consult verified lawyers directly through the platform.
+              </p>
+              <div className="relative h-48">
+                <Image
+                  src="https://framerusercontent.com/images/8ObzFQmxBBVb3YsOk5I65Lks2i8.png"
+                  alt="Multi-platform Interface"
+                  fill
+                  className="object-contain rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+
+
+
 
       {/* Features Section */}
       <section className="py-24 dark:bg-[#111111] bg-white">
