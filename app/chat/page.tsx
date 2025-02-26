@@ -215,45 +215,46 @@ export default function ChatPage() {
       </div>
 
       <ScrollArea className="flex-1" ref={scrollAreaRef}>
-        <div className="space-y-4 p-4">
-          {currentSession.messages.map((message) => (
-            <div
-              key={message.id}
-              className={cn(
-                "flex flex-col max-w-[80%] rounded-lg p-4",
-                message.role === "user"
-                  ? "ml-auto bg-primary text-primary-foreground"
-                  : "bg-muted",
-                message.role === "lawyer" && "bg-blue-100 dark:bg-blue-900"
-              )}
-            >
-              <ReactMarkdown
-                components={{
-                  code: ({ node, className, children, ...props }) => {
-                    const match = /language-(\w+)/.exec(className || "");
-                    return match ? (
-                      <CodeBlock
-                        language={match[1]}
-                        code={String(children).trim()}
-                      />
-                    ) : (
-                      <code className={className || ""} {...props}>
-                        {children}
-                      </code>
-                    );
-                  },
-                }}
-              >
-                {message.content}
-              </ReactMarkdown>
-              ;
-              <span className="mt-2 text-xs opacity-70">
-                {new Date(message.timestamp).toLocaleTimeString()}
-              </span>
-            </div>
-          ))}
-        </div>
-      </ScrollArea>
+  <div className="space-y-4 p-4">
+    {currentSession.messages.map((message) => (
+      <div
+        key={message.id}
+        className={cn(
+          "flex flex-col max-w-[80%] rounded-lg p-4",
+          message.role === "user"
+            ? "ml-auto bg-primary text-primary-foreground"
+            : "bg-muted",
+          message.role === "lawyer" && "bg-blue-100 dark:bg-blue-900"
+        )}
+      >
+        <ReactMarkdown
+          components={{
+            // ✅ Removed `inline` from destructured props
+            code: ({ node, className, children, ...props }) => {
+              const match = /language-(\w+)/.exec(className || "");
+              return match ? (
+                <CodeBlock
+                  language={match[1]}
+                  code={String(children).trim()}
+                />
+              ) : (
+                <code className={className || ""} {...props}>
+                  {children}
+                </code>
+              );
+            },
+          }}
+        >
+          {message.content}
+        </ReactMarkdown>
+        <span className="mt-2 text-xs opacity-70">
+          {new Date(message.timestamp).toLocaleTimeString()}
+        </span>
+      </div>
+    ))}
+  </div>
+</ScrollArea>
+
 
       <div className="p-4 border-t">
         <div className="flex items-center gap-2 max-w-3xl mx-auto">
