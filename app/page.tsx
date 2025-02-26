@@ -462,7 +462,7 @@ export default function Home() {
               Users
             </div>
             <h2 className="text-5xl font-medium mb-6">Who is <span className="italic text-blue-500">AI</span>
-            <span className="text-blue-500">n</span>Bondhufor?</h2>
+            <span className="text-blue-500">n</span>Bondhu for ?</h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Explore features that boost your productivity. From document
               automation to advanced research, we've got the hard work covered.

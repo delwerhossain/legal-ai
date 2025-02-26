@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Mic, Send, X, Trash2, Scale } from "lucide-react";
+import { Mic, Send, X, Trash2, Scale, Sun, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/hooks/use-language";
 import { useChatStore } from "@/lib/chat-store";
@@ -13,6 +13,7 @@ import { Message } from "@/types/chat";
 import { CodeBlock } from "@/components/code-block";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 const translations = {
   en: {
@@ -67,6 +68,23 @@ export default function ChatPage() {
   const inputRef = useRef<HTMLInputElement>(null);
   const { language } = useLanguage();
   const t = translations[language];
+  const { theme, setTheme } = useTheme();
+  
+  const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+
+  
+  useEffect(() => {
+    setMounted(true);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (scrollAreaRef.current) {
@@ -203,6 +221,18 @@ export default function ChatPage() {
           ) : null}
           <h2 className="font-semibold">{currentSession.title}</h2>
         </div>
+        {/* main */}
+        <Link 
+            href="/" 
+            className="text-2xl font-semibold text-gray-900 dark:text-white"
+          >
+            <span className="italic text-blue-500">AI</span>
+            <span className="text-blue-500">n</span>
+            <span className="dark:text-white">Bondhu</span>
+          </Link>
+
+
+        <div>
         <Button
           variant="ghost"
           size="icon"
@@ -212,6 +242,21 @@ export default function ChatPage() {
         >
           <Trash2 className="h-5 w-5" />
         </Button>
+        <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="rounded-full"
+          >
+            {mounted && (
+              theme === "dark" ? (
+                <Sun className="h-5 w-5 text-gray-200 hover:text-yellow-400 transition-colors" />
+              ) : (
+                <Moon className="h-5 w-5 text-gray-700 hover:text-blue-500 transition-colors" />
+              )
+            )}
+          </Button>
+        </div>
       </div>
 
       <ScrollArea className="flex-1" ref={scrollAreaRef}>
