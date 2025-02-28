@@ -18,7 +18,7 @@ AinBondhu AI is a legal assistant chatbot designed to provide instant legal guid
 ```sh
 # Clone the repository
 git clone https://github.com/delwerhossain/legal-ai.git
-cd ainbondhu-ai
+cd legal-ai
 
 # Install dependencies
 npm install
