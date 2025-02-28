@@ -70,7 +70,7 @@ export default function ChatPage() {
   const [isRecording, setIsRecording] = useState(false);
   const [loading, setLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   const { language } = useLanguage();
   const t = translations[language];
   const { theme, setTheme } = useTheme();
@@ -342,7 +342,7 @@ export default function ChatPage() {
 
           <div className="flex-1 relative">
             <textarea
-              ref={inputRef}
+             ref={inputRef as React.RefObject<HTMLTextAreaElement>} 
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => {
