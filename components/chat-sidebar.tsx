@@ -12,13 +12,13 @@ export function ChatSidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () 
   return (
     <div
       className={cn(
-        "fixed inset-0 bg-black  bg-opacity-50 z-50 md:relative md:bg-transparent md:border-r",
+        "fixed inset-0 bg-black bg-opacity-50 z-50 md:relative md:bg-transparent md:border-r",
         isOpen ? "block" : "hidden md:block"
       )}
       onClick={onClose} // Close sidebar when clicking outside
     >
       <div
-        className="w-[300px] h-full bg-gray-200 dark:bg-gray-800 border-r flex flex-col md:block absolute left-0 top-0 md:relative"
+        className="w-[300px] h-full md:bg-muted/30 bg-gray-200 dark:bg-gray-800 border-r flex flex-col md:block absolute left-0 top-0 md:relative"
         onClick={(e) => e.stopPropagation()} // Prevent click from closing sidebar
       >
         {/* Close Button for Mobile */}
