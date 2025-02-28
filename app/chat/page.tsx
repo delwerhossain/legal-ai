@@ -58,9 +58,13 @@ const translations = {
 };
 
 export default function ChatPage() {
-
-  const { getCurrentSession, addMessage, createSession,clearMessages, updateLastMessage } =
-    useChatStore();
+  const {
+    getCurrentSession,
+    addMessage,
+    createSession,
+    clearMessages,
+    updateLastMessage,
+  } = useChatStore();
   const currentSession = getCurrentSession();
   const [input, setInput] = useState("");
   const [isRecording, setIsRecording] = useState(false);
@@ -70,12 +74,10 @@ export default function ChatPage() {
   const { language } = useLanguage();
   const t = translations[language];
   const { theme, setTheme } = useTheme();
-  
+
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-
-  
   useEffect(() => {
     setMounted(true);
     const handleScroll = () => {
@@ -205,36 +207,37 @@ export default function ChatPage() {
   if (!currentSession) {
     return (
       <div className="h-full grid items-center justify-center">
-       <div>
-       <div className="text-center space-y-4">
-          <h2 className="text-2xl font-bold">{t.welcome}</h2>
-          <p className="text-muted-foreground">{t.startNewChat}</p>
+        <div>
+          <div className="text-center space-y-4">
+            <h2 className="text-2xl font-bold">{t.welcome}</h2>
+            <p className="text-muted-foreground">{t.startNewChat}</p>
+          </div>
+          <div className="p-4 space-y-2">
+            <Button
+              variant="outline"
+              className="w-full justify-start"
+              onClick={() => createSession("general")}
+            >
+              <Plus className="mr-2 h-4 w-4" />
+              New Chat
+            </Button>
+            <Button
+              variant="outline"
+              className="w-full justify-start"
+              onClick={() => createSession("lawyer")}
+            >
+              <Scale className="mr-2 h-4 w-4" />
+              New Lawyer Chat
+            </Button>
+          </div>
         </div>
-        <div className="p-4 space-y-2">
-        <Button
-          variant="outline"
-          className="w-full justify-start"
-          onClick={() => createSession('general')}
-        >
-          <Plus className="mr-2 h-4 w-4" />
-          New Chat
-        </Button>
-        <Button
-          variant="outline"
-          className="w-full justify-start"
-          onClick={() => createSession('lawyer')}
-        >
-          <Scale className="mr-2 h-4 w-4" />
-          New Lawyer Chat
-        </Button>
-      </div>
-       </div>
       </div>
     );
   }
 
   return (
     <div className="h-full flex flex-col">
+      {/* Header */}
       <div className="border-b p-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {currentSession.type === "lawyer" ? (
@@ -242,86 +245,84 @@ export default function ChatPage() {
           ) : null}
           <h2 className="font-semibold">{currentSession.title}</h2>
         </div>
-        {/* main */}
-        <Link 
-            href="/" 
-            className="text-2xl font-semibold text-gray-900 dark:text-white"
-          >
-            <span className="italic text-blue-500">AI</span>
-            <span className="text-blue-500">n</span>
-            <span className="dark:text-white">Bondhu</span>
-          </Link>
 
+        <Link
+          href="/"
+          className="text-2xl font-semibold text-gray-900 dark:text-white"
+        >
+          <span className="italic text-blue-500">AI</span>
+          <span className="text-blue-500">n</span>
+          <span className="dark:text-white">Bondhu</span>
+        </Link>
 
         <div>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={clearMessages}
-          className="text-destructive"
-          title={t.clearChat}
-        >
-          <Trash2 className="h-5 w-5" />
-        </Button>
-        <Button
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={clearMessages}
+            className="text-destructive"
+            title={t.clearChat}
+          >
+            <Trash2 className="h-5 w-5" />
+          </Button>
+          <Button
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="rounded-full"
           >
-            {mounted && (
-              theme === "dark" ? (
+            {mounted &&
+              (theme === "dark" ? (
                 <Sun className="h-5 w-5 text-gray-200 hover:text-yellow-400 transition-colors" />
               ) : (
                 <Moon className="h-5 w-5 text-gray-700 hover:text-blue-500 transition-colors" />
-              )
-            )}
+              ))}
           </Button>
         </div>
       </div>
 
-      <ScrollArea className="flex-1" ref={scrollAreaRef}>
-  <div className="space-y-4 p-4">
-    {currentSession.messages.map((message) => (
-      <div
-        key={message.id}
-        className={cn(
-          "flex flex-col max-w-[80%] rounded-lg p-4",
-          message.role === "user"
-            ? "ml-auto bg-primary text-primary-foreground"
-            : "bg-muted",
-          message.role === "lawyer" && "bg-slate-900 text-white"
-        )}
-      >
-        <ReactMarkdown
-          components={{
-            // ✅ Removed `inline` from destructured props
-            code: ({ node, className, children, ...props }) => {
-              const match = /language-(\w+)/.exec(className || "");
-              return match ? (
-                <CodeBlock
-                  language={match[1]}
-                  code={String(children).trim()}
-                />
-              ) : (
-                <code className={className || ""} {...props}>
-                  {children}
-                </code>
-              );
-            },
-          }}
-        >
-          {message.content}
-        </ReactMarkdown>
-        <span className="mt-2 text-xs opacity-70">
-          {new Date(message.timestamp).toLocaleTimeString()}
-        </span>
-      </div>
-    ))}
-  </div>
-</ScrollArea>
+      {/* Chat Messages */}
+      <ScrollArea className="flex-1 px-2 sm:px-4" ref={scrollAreaRef}>
+        <div className="space-y-4 p-2 sm:p-4">
+          {currentSession.messages.map((message) => (
+            <div
+              key={message.id}
+              className={cn(
+                "flex flex-col max-w-[90%] md:max-w-[80%] rounded-lg p-3 sm:p-4",
+                message.role === "user"
+                  ? "ml-auto bg-primary text-primary-foreground"
+                  : "bg-muted",
+                message.role === "lawyer" && "bg-slate-900 text-white"
+              )}
+            >
+              <ReactMarkdown
+                components={{
+                  code: ({ node, className, children, ...props }) => {
+                    const match = /language-(\w+)/.exec(className || "");
+                    return match ? (
+                      <CodeBlock
+                        language={match[1]}
+                        code={String(children).trim()}
+                      />
+                    ) : (
+                      <code className={className || ""} {...props}>
+                        {children}
+                      </code>
+                    );
+                  },
+                }}
+              >
+                {message.content}
+              </ReactMarkdown>
+              <span className="mt-2 text-xs opacity-70">
+                {new Date(message.timestamp).toLocaleTimeString()}
+              </span>
+            </div>
+          ))}
+        </div>
+      </ScrollArea>
 
-
+      {/* Input Area */}
       <div className="p-4 border-t">
         <div className="flex items-center gap-2 max-w-3xl mx-auto">
           <Button
@@ -339,15 +340,28 @@ export default function ChatPage() {
             )}
           </Button>
 
-          <Input
-            ref={inputRef}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()}
-            placeholder={t.placeholder}
-            className="flex-1"
-            disabled={loading}
-          />
+          <div className="flex-1 relative">
+            <textarea
+              ref={inputRef}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSend();
+                }
+              }}
+              placeholder={t.placeholder}
+              className="w-full resize-none overflow-hidden border rounded-lg p-2 min-h-[40px] max-h-[200px]"
+              disabled={loading}
+              rows={1}
+              style={{ height: "auto" }}
+              onInput={(e) => {
+                e.currentTarget.style.height = "auto";
+                e.currentTarget.style.height = `${e.currentTarget.scrollHeight}px`;
+              }}
+            />
+          </div>
 
           <Button
             onClick={handleSend}
@@ -361,13 +375,6 @@ export default function ChatPage() {
             )}
           </Button>
         </div>
-      </div>
-
-      <div className="p-2 text-xs text-center text-muted-foreground border-t">
-        <p>{t.legalDisclaimer}</p>
-        <Link href="/privacy-policy" className="text-blue-500 hover:underline">
-          {t.privacyPolicy}
-        </Link>
       </div>
     </div>
   );
