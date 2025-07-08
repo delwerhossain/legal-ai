@@ -284,7 +284,9 @@ export default function ChatPage() {
       {/* Chat Messages */}
       <ScrollArea className="flex-1 px-2 sm:px-4" ref={scrollAreaRef}>
         <div className="space-y-4 p-2 sm:p-4">
-          {currentSession.messages.map((message) => (
+          {currentSession.messages
+            .filter((msg) => msg.role !== "system")
+            .map((message) => (
             <div
               key={message.id}
               className={cn(
