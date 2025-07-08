@@ -21,11 +21,20 @@ export const useChatStore = create<ChatStore>()(
       currentSessionId: null,
 
       createSession: (type) => {
+        const now = new Date();
+        const systemMessage: Message = {
+          id: `system-${now.getTime()}`,
+          role: 'system',
+          timestamp: now,
+          content:
+            'You are AinBondhu, a legal assistant focused on Bangladeshi law and human rights. Politely refuse to answer questions outside of legal topics.',
+        };
+
         const newSession: ChatSession = {
-          id: Date.now().toString(),
+          id: now.getTime().toString(),
           title: `New Chat ${get().sessions.length + 1}`,
-          createdAt: new Date(),
-          messages: [],
+          createdAt: now,
+          messages: [systemMessage],
           type,
         };
         set((state) => ({

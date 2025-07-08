@@ -44,32 +44,52 @@ export function ChatSidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () 
         {/* Chat List */}
         <ScrollArea className="flex-1">
           <div className="p-4 space-y-2">
-            {sessions.map((session) => (
-              <div
-                key={session.id}
-                className={cn(
-                  "flex items-center justify-between p-2 rounded-lg hover:bg-accent/50 cursor-pointer",
-                  currentSessionId === session.id && "bg-accent"
-                )}
-                onClick={() => switchSession(session.id)}
-              >
-                <div className="flex items-center">
-                  {session.type === "lawyer" ? <Scale className="mr-2 h-4 w-4" /> : <MessageSquare className="mr-2 h-4 w-4" />}
-                  <span className="truncate">{session.title}</span>
-                </div>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="opacity-0 group-hover:opacity-100"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    deleteSession(session.id);
-                  }}
+            {sessions.map((session) => {
+              const visibleMessages = session.messages.filter((m) => m.role !== 'system');
+              const lastMessage = visibleMessages[visibleMessages.length - 1];
+              const preview = lastMessage ? lastMessage.content.slice(0, 30) : '';
+              const time = lastMessage ? new Date(lastMessage.timestamp) : session.createdAt;
+              return (
+                <div
+                  key={session.id}
+                  className={cn(
+                    'flex justify-between p-2 rounded-lg hover:bg-accent/50 cursor-pointer',
+                    currentSessionId === session.id && 'bg-accent'
+                  )}
+                  onClick={() => switchSession(session.id)}
                 >
-                  <Trash2 className="h-4 w-4" />
-                </Button>
-              </div>
-            ))}
+                  <div className="flex flex-col flex-1">
+                    <div className="flex items-center">
+                      {session.type === 'lawyer' ? (
+                        <Scale className="mr-2 h-4 w-4" />
+                      ) : (
+                        <MessageSquare className="mr-2 h-4 w-4" />
+                      )}
+                      <span className="truncate font-medium flex-1">{session.title}</span>
+                    </div>
+                    {preview && (
+                      <span className="text-xs text-muted-foreground truncate">
+                        {preview}
+                      </span>
+                    )}
+                    <span className="text-[10px] text-muted-foreground">
+                      {new Date(time).toLocaleDateString()}
+                    </span>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="opacity-0 group-hover:opacity-100"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      deleteSession(session.id);
+                    }}
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </div>
+              );
+            })}
           </div>
         </ScrollArea>
       </div>
